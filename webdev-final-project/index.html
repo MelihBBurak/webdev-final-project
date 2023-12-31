@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <nav>
+        <button onclick="showSection('courses')">Courses</button>
+        <button onclick="showSection('students')">Students</button>
+        <button onclick="showSection('addingProcesses')">Adding Processes</button>
+    </nav>
+
+    <div id="coursesSection" class="content">
+        <h2>Courses</h2>
+        <!-- Dersler ve öğrencilerin notları burada gösteriliyor -->
+    </div>
+
+    <div id="studentsSection" class="content" style="display:none;">
+        <h2>Students</h2>
+        <section id="gradeTable">
+            <!-- Notlar burada gösteriliyor -->
+        </section>
+    </div>
+
+    <div id="addingProcessesSection" class="content" style="display:none;"> <!-- Ekleme işlemleri burada gösteriliyor -->
+        <h2>Adding Processes</h2>
+        <section>
+            <h2>Add a Course</h2> <!-- Sırasıyla ilk olarak Ders Ekleme kısmı -->
+            <input type="text" id="courseName" placeholder="Ders Adı">
+            <button onclick="addCourse()">Add</button>
+        </section>
+    
+        <section>
+            <h2>Add a Student</h2> <!-- Ardından Öğrenci Ekleme kısmı -->
+            <input type="number" id="studentId" placeholder="Öğrenci ID">
+            <input type="text" id="studentName" placeholder="Öğrenci Adı">
+            <input type="text" id="studentSurname" placeholder="Öğrenci Soyadı">
+            <button onclick="addStudent()">Add</button>
+        </section>
+    
+        <section>
+            <h2>Give a Grade</h2> <!-- Son olarak da Not Verme kısmı -->
+            <select id="courseSelect">
+                <!-- Ders seçimi buradan seçiliyor -->
+            </select>
+            <select id="studentSelect">
+                <!-- Öğrenci seçimi ise buradan seçiliyor -->
+            </select>
+            <input type="number" id="midTermGrade" placeholder="Vize Notu">
+            <input type="number" id="finalGrade" placeholder="Final Notu">
+            <button onclick="enrollStudentToCourse()">Give</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
